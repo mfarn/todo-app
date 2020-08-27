@@ -18,7 +18,7 @@ for (var i = 0; i < x.length; i++) {
         this.parentElement.remove();
         event.stopPropagation();
     });
-} 
+}
 
 //Create New Element
 
@@ -27,13 +27,13 @@ input.addEventListener("keypress", function(event) {
         if(this.value == "") {
             alert("Você deve digitar alguma coisa!")
         } else {
-            var todoText = document.createElement('li');
-            todoText.innerHTML = "<span class='close'><i class='far fa-trash-alt'></i></span> " + this.value; 
-            ul.appendChild(todoText);
+            var todoEl = document.createElement('li');
+            todoEl.innerHTML = "<span class='close'><i class='far fa-trash-alt'></i></span> " + this.value; 
+            ul.appendChild(todoEl);
             input.value = "";
             var close = document.querySelectorAll(".close");
 
-            todoText.addEventListener("click", function() {
+            todoEl.addEventListener("click", function() {
                 this.classList.toggle("done");
             });
             
