@@ -3,20 +3,6 @@ var x = document.querySelectorAll("span");
 var input = document.querySelector("input[type='text']");
 var ul = document.querySelector("#listOfTasks");
 
-//Highlight elements on click
-
-for (var i = 0; i < lis.length; i++) {
-    lis[i].addEventListener("mouseover", function() {
-        this.classList.add("selected");
-    });
-}
-
-for (var i = 0; i < lis.length; i++) {
-    lis[i].addEventListener("mouseout", function() {
-        this.classList.remove("selected");
-    });
-}
-
 //Linethrough element on click
 
 for (var i = 0; i < lis.length; i++) {
@@ -42,18 +28,10 @@ input.addEventListener("keypress", function(event) {
             alert("Você deve digitar alguma coisa!")
         } else {
             var todoText = document.createElement('li');
-            todoText.innerHTML = "<span class='close'>X</span> " + this.value; 
+            todoText.innerHTML = "<span class='close'><i class='far fa-trash-alt'></i></span> " + this.value; 
             ul.appendChild(todoText);
             input.value = "";
             var close = document.querySelectorAll(".close");
-
-            todoText.addEventListener("mouseout", function() {
-                this.classList.remove("selected");
-            });
-
-            todoText.addEventListener("mouseover", function() {
-                this.classList.add("selected");
-            });
 
             todoText.addEventListener("click", function() {
                 this.classList.toggle("done");
