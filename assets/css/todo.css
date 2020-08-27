@@ -1,0 +1,32 @@
+#container {
+    width: 360px;
+    margin: 100px auto;
+    background: #f7f7f7;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    background: #2980b9;
+    color: white;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: gray;
+}
+
+.selected {
+    color: green;
+}
+
+.show {
+    opacity: 1;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 400ms;
+}
